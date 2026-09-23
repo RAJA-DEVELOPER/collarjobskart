@@ -174,6 +174,7 @@ const jobs = [
 ];
 
 const pathName = location.pathname.split("/").pop() || "index.html";
+document.body.dataset.page = pathName.replace(".html", "") || "index";
 const header = document.querySelector(".site-header");
 
 if (header) {
