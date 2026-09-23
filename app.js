@@ -8,6 +8,26 @@ const navItems = [
   ["contact.html", "Contact Us"]
 ];
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reducedMotion) {
+  const pageIntro = document.createElement("div");
+  pageIntro.className = "page-intro";
+  pageIntro.setAttribute("aria-hidden", "true");
+  pageIntro.innerHTML = `<div class="page-intro__inside"><div class="page-intro__mark">C</div><div class="page-intro__name">COLLAR JOBSKART</div><div class="page-intro__line"></div></div>`;
+  document.body.prepend(pageIntro);
+
+  const dismissIntro = () => {
+    window.setTimeout(() => pageIntro.classList.add("is-leaving"), 360);
+  };
+
+  if (document.readyState === "complete") {
+    dismissIntro();
+  } else {
+    window.addEventListener("load", dismissIntro, { once: true });
+  }
+}
+
 const serviceDetails = {
   consulting: {
     label: "Consulting",
@@ -229,6 +249,41 @@ links?.querySelectorAll("a").forEach((anchor, index) => {
     document.body.classList.remove("nav-open");
   });
 });
+
+if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  document.querySelectorAll(".btn").forEach((button) => {
+    button.addEventListener("pointermove", (event) => {
+      const bounds = button.getBoundingClientRect();
+      const x = (event.clientX - bounds.left - bounds.width / 2) * 0.09;
+      const y = (event.clientY - bounds.top - bounds.height / 2) * 0.11;
+      button.style.setProperty("--magnet-x", `${x.toFixed(1)}px`);
+      button.style.setProperty("--magnet-y", `${y.toFixed(1)}px`);
+    });
+
+    button.addEventListener("pointerleave", () => {
+      button.style.removeProperty("--magnet-x");
+      button.style.removeProperty("--magnet-y");
+    });
+  });
+
+  document.querySelectorAll(".hero").forEach((hero) => {
+    const media = hero.querySelector(".hero-media");
+    if (!media) return;
+
+    hero.addEventListener("pointermove", (event) => {
+      const bounds = hero.getBoundingClientRect();
+      const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * -10;
+      const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * -7;
+      media.style.setProperty("--parallax-x", `${x.toFixed(1)}px`);
+      media.style.setProperty("--parallax-y", `${y.toFixed(1)}px`);
+    });
+
+    hero.addEventListener("pointerleave", () => {
+      media.style.setProperty("--parallax-x", "0px");
+      media.style.setProperty("--parallax-y", "0px");
+    });
+  });
+}
 
 const back = document.querySelector(".back-top");
 let ticking = false;
