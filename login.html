@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Login interface preview for Collar JobsKart. Frontend only; authentication is not connected.">
+  <title>Log In | Collar JobsKart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"></header>
+  <main class="auth-section">
+    <div class="wrap">
+      <section class="auth-shell reveal">
+        <div class="auth-visual">
+          <div class="eyebrow">Secure access preview</div>
+          <h1>Hello again.<br><span class="serif">Continue with clarity.</span></h1>
+          <p>This is a polished frontend-only sign-in screen for a future Collar JobsKart network experience. No authentication is connected.</p>
+        </div>
+        <div class="auth-panel">
+          <div class="eyebrow">Log in</div>
+          <h2>Your next step<br><span class="serif">starts here.</span></h2>
+          <p class="lede">Use the form to preview validation, password visibility and status messaging.</p>
+          <form data-local-form data-message="Your sign-in details are validated locally. Authentication is not connected." class="form-grid">
+            <div class="form-field"><label for="login-email">Email address</label><input class="form-control" id="login-email" type="email" autocomplete="username" required placeholder="you@example.com"></div>
+            <div class="form-field"><label for="login-password">Password</label><div class="password-wrap"><input class="form-control" id="login-password" type="password" autocomplete="current-password" required minlength="6" placeholder="Enter your password"><button class="toggle-password" type="button" data-password-toggle="login-password">Show</button></div></div>
+            <div class="form-field"><label><input type="checkbox"> Keep me signed in on this device</label></div>
+            <div class="form-field"><button class="btn btn-dark" type="submit">Continue <span class="arrow">&nearr;</span></button><div class="form-status" aria-live="polite"></div></div>
+          </form>
+          <p class="form-note">Frontend only: no account authentication or password handling is connected.</p>
+          <p class="auth-foot">New to the network? <a href="signup.html">Create a profile</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"></footer>
+  <button class="back-top" aria-label="Back to top">&uarr;</button>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Collar JobsKart careers and featured jobs including IPDRG Coder and AR Caller roles from the source website.">
+  <title>Careers &amp; Jobs | Collar JobsKart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"></header>
+  <main>
+    <section class="hero hero--inner hero--careers">
+      <div class="hero-media" role="img" aria-label="Candidate shaking hands after an interview"></div>
+      <div class="hero-shade"></div>
+      <div class="wrap hero-content">
+        <div class="eyebrow">Careers and jobs</div>
+        <h1>Your next move<br><span class="serif">starts here.</span></h1>
+        <p>Explore roles featured by Collar JobsKart or share your profile so the team can understand what you are looking for.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Featured roles</div>
+            <h2>Find a role that<br><span class="serif">fits your direction.</span></h2>
+          </div>
+          <p class="lede">The source website shows Medical Services / Hospital roles, including IPDRG Coder and AR Caller listings across multiple cities.</p>
+        </div>
+        <div class="metric-row reveal">
+          <div class="metric"><strong data-count="32">0</strong><span>Jobs live on source site</span></div>
+          <div class="metric"><strong data-count="0">0</strong><span>Added today on source site</span></div>
+          <div class="metric"><strong data-count="4">0</strong><span>Cities visible in listings</span></div>
+          <div class="metric"><strong data-count="2">0</strong><span>Featured role types shown</span></div>
+        </div>
+        <p class="notice reveal" style="margin-top:24px">Listings can change. Contact Collar JobsKart to confirm current availability before applying.</p>
+        <div class="jobs-filter reveal">
+          <label class="sr-only" for="job-search">Search roles</label>
+          <input id="job-search" data-job-search type="search" placeholder="Search by role, city or category" aria-label="Search roles">
+          <label class="sr-only" for="job-city">Filter by city</label>
+          <select id="job-city" data-job-city aria-label="Filter by city"><option value="">All cities</option><option>Chennai</option><option>Hyderabad</option><option>Bangalore</option><option>Trichy</option></select>
+          <label class="sr-only" for="job-category">Filter by role</label>
+          <select id="job-category" data-job-category aria-label="Filter by role"><option value="">All roles</option><option>IPDRG</option><option>AR Caller</option></select>
+        </div>
+        <div class="job-list" data-job-list aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section blue-band">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Job categories</div>
+            <h2>What the source<br><span class="serif">site highlights.</span></h2>
+          </div>
+          <p class="lede">The original home page lists industry and role categories. This keeps the careers page honest and useful.</p>
+        </div>
+        <div class="benefit-grid reveal">
+          <article class="benefit"><div class="eyebrow">Industry</div><strong>Medical Services / Hospital</strong><p>The visible listed jobs sit in the medical services and hospital category.</p></article>
+          <article class="benefit"><div class="eyebrow">Role</div><strong>Coder</strong><p>Coding roles include IPDRG Coder listings across multiple cities.</p></article>
+          <article class="benefit"><div class="eyebrow">Entry</div><strong>Fresher</strong><p>The source category list includes Fresher as a job pathway.</p></article>
+          <article class="benefit"><div class="eyebrow">Role</div><strong>AR Caller</strong><p>AR Caller roles are shown for Chennai and Bangalore.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap form-layout">
+        <div class="reveal">
+          <div class="eyebrow">Share your profile</div>
+          <h2>Let opportunity<br><span class="serif">find its way to you.</span></h2>
+          <p class="lede">Use this frontend-only form to preview how a candidate profile flow could work.</p>
+        </div>
+        <div class="reveal">
+          <form data-local-form data-message="Your profile details are validated in this frontend preview." class="form-grid">
+            <div class="form-field"><label for="candidate-name">Your name</label><input class="form-control" id="candidate-name" required autocomplete="name"></div>
+            <div class="form-field"><label for="candidate-email">Email</label><input class="form-control" id="candidate-email" type="email" required autocomplete="email"></div>
+            <div class="form-field"><label for="candidate-phone">Phone</label><input class="form-control" id="candidate-phone" type="tel" required pattern="[0-9+() .-]{7,}"></div>
+            <div class="form-field"><label for="candidate-city">Preferred city</label><select class="form-control" id="candidate-city" required><option value="">Choose city</option><option>Chennai</option><option>Hyderabad</option><option>Bangalore</option><option>Trichy</option><option>Other</option></select></div>
+            <div class="form-field full"><label for="candidate-interest">Area of interest</label><input class="form-control" id="candidate-interest" placeholder="Role, location or skill area" required></div>
+            <div class="form-field full"><label for="candidate-message">A little about you</label><textarea class="form-control" id="candidate-message" placeholder="Your experience and what you are looking for"></textarea></div>
+            <div class="form-field full"><button class="btn" type="submit">Validate my details <span class="arrow">&nearr;</span></button><p class="form-note">Frontend preview only: details are not sent or stored.</p><div class="form-status" aria-live="polite"></div></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+  <button class="back-top" aria-label="Back to top">&uarr;</button>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a Collar JobsKart profile preview. Frontend only; account creation is not connected.">
+  <title>Sign Up | Collar JobsKart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"></header>
+  <main class="auth-section">
+    <div class="wrap">
+      <section class="auth-shell reveal" style="--auth-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=84')">
+        <div class="auth-visual">
+          <div class="eyebrow">Join the network</div>
+          <h1>Make room for<br><span class="serif">what comes next.</span></h1>
+          <p>Create a candidate, employer or HR partner profile preview. The form validates locally and does not create an account.</p>
+        </div>
+        <div class="auth-panel">
+          <div class="eyebrow">Sign up</div>
+          <h2>Build your<br><span class="serif">CJK profile.</span></h2>
+          <p class="lede">Share the basics so the interface feels complete for both job seekers and employers.</p>
+          <form data-local-form data-message="Your profile details are validated locally. Account creation is not connected." class="form-grid">
+            <div class="form-field"><label for="signup-name">Full name</label><input class="form-control" id="signup-name" autocomplete="name" required placeholder="Your name"></div>
+            <div class="form-field"><label for="signup-email">Email address</label><input class="form-control" id="signup-email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+            <div class="form-field"><label for="signup-phone">Phone number</label><input class="form-control" id="signup-phone" type="tel" autocomplete="tel" required pattern="[0-9+() .-]{7,}" placeholder="+91"></div>
+            <div class="form-field"><label for="signup-type">I am here as</label><select class="form-control" id="signup-type" required><option value="">Choose one</option><option>Job seeker</option><option>Employer</option><option>HR partner</option></select></div>
+            <div class="form-field"><label for="signup-password">Create password</label><div class="password-wrap"><input class="form-control" id="signup-password" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters"><button class="toggle-password" type="button" data-password-toggle="signup-password">Show</button></div></div>
+            <div class="form-field"><label for="signup-interest">Primary interest</label><select class="form-control" id="signup-interest" required><option value="">Choose one</option><option>Find jobs</option><option>Hire talent</option><option>Training support</option><option>Payroll or consulting</option></select></div>
+            <div class="form-field"><button class="btn btn-dark" type="submit">Create profile <span class="arrow">&nearr;</span></button><div class="form-status" aria-live="polite"></div></div>
+          </form>
+          <p class="form-note">Frontend only: your details are not sent or stored.</p>
+          <p class="auth-foot">Already have a profile? <a href="login.html">Log in</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"></footer>
+  <button class="back-top" aria-label="Back to top">&uarr;</button>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
