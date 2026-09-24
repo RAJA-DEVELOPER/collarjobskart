@@ -284,6 +284,49 @@ if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
       media.style.setProperty("--parallax-y", "0px");
     });
   });
+
+  document.querySelectorAll("[data-tilt]").forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const bounds = card.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      card.style.setProperty("--tilt-x", `${(-y * 4.2).toFixed(2)}deg`);
+      card.style.setProperty("--tilt-y", `${(x * 4.2).toFixed(2)}deg`);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--tilt-x", "0deg");
+      card.style.setProperty("--tilt-y", "0deg");
+    });
+  });
+}
+
+if (!reducedMotion) {
+  const scrollLayers = [...document.querySelectorAll("[data-scroll-parallax]")];
+  let scrollLayerFrame = 0;
+
+  const updateScrollLayers = () => {
+    scrollLayerFrame = 0;
+    const viewportCenter = window.innerHeight / 2;
+
+    scrollLayers.forEach((layer) => {
+      const rate = Number(layer.dataset.scrollParallax || 0);
+      const bounds = layer.getBoundingClientRect();
+      const layerCenter = bounds.top + bounds.height / 2;
+      const shift = Math.max(-32, Math.min(32, (viewportCenter - layerCenter) * rate * 0.22));
+      layer.style.setProperty("--scroll-parallax-y", `${shift.toFixed(2)}px`);
+    });
+  };
+
+  const requestScrollLayerUpdate = () => {
+    if (!scrollLayerFrame) scrollLayerFrame = requestAnimationFrame(updateScrollLayers);
+  };
+
+  if (scrollLayers.length) {
+    updateScrollLayers();
+    window.addEventListener("scroll", requestScrollLayerUpdate, { passive: true });
+    window.addEventListener("resize", requestScrollLayerUpdate, { passive: true });
+  }
 }
 
 const back = document.querySelector(".back-top");
