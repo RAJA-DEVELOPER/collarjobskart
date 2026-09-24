@@ -14,7 +14,7 @@ if (!reducedMotion) {
   const pageIntro = document.createElement("div");
   pageIntro.className = "page-intro";
   pageIntro.setAttribute("aria-hidden", "true");
-  pageIntro.innerHTML = `<div class="page-intro__inside"><div class="page-intro__mark">C</div><div class="page-intro__name">COLLAR JOBSKART</div><div class="page-intro__line"></div></div>`;
+  pageIntro.innerHTML = `<div class="page-intro__inside"><img src="logo.svg" class="page-intro__logo" alt="Collar JobsKart"><div class="page-intro__line"></div></div>`;
   document.body.prepend(pageIntro);
 
   const dismissIntro = () => {
@@ -179,9 +179,9 @@ const header = document.querySelector(".site-header");
 
 if (header) {
   header.innerHTML = `<nav class="nav" aria-label="Main navigation">
-    <a class="brand" href="index.html" aria-label="Collar JobsKart home">
-      <span class="brand-mark">C</span>
-      <span class="brand-name">COLLAR JOBSKART<small>People. Potential. Progress.</small></span>
+    <a class="brand brand--image" href="index.html" aria-label="Collar JobsKart home">
+      <img src="logo.svg" class="brand-logo brand-logo--dark" alt="Collar JobsKart logo" width="190" height="54">
+      <img src="logo-white.svg" class="brand-logo brand-logo--light" alt="" aria-hidden="true" width="190" height="54">
     </a>
     <div class="nav-links" id="nav-links">
       ${navItems.map(([url, label]) => `<a href="${url}" class="${pathName === url ? "active" : ""}" ${pathName === url ? 'aria-current="page"' : ""}>${label}</a>`).join("")}
@@ -201,31 +201,48 @@ if (document.querySelector("main > .hero")) {
 const footer = document.querySelector(".site-footer");
 
 if (footer) {
+  const companyLinks = navItems.filter(([url]) => url !== "services.html");
+  const serviceLinks = Object.entries(serviceDetails).map(([slug, item]) => [`service-detail.html?service=${slug}`, item.label]);
   footer.innerHTML = `<div class="wrap">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">C</span>
-          <span class="brand-name">COLLAR JOBSKART<small>People. Potential. Progress.</small></span>
+      <div class="footer-brand footer-col">
+        <a class="brand brand--image brand--footer" href="index.html" aria-label="Collar JobsKart home">
+          <img src="logo-white.svg" class="brand-logo" alt="Collar JobsKart logo" width="190" height="54">
         </a>
         <p>A people-first HR consultancy partnering with businesses through recruitment, training, talent development, market research and payroll support.</p>
-      </div>
-      <div>
-        <div class="footer-title">Explore</div>
-        <div class="footer-links">
-          ${navItems.map(([url, label]) => `<a href="${url}">${label}</a>`).join("")}
-          <a href="service-detail.html">Service details</a>
+        <p class="footer-tag">Connecting talent. Fueling growth.</p>
+        <div class="footer-extra">
+          <p>Chennai • Kochi • Hyderabad — Mon–Sat, 9:30 AM–6:30 PM. Share your requirement or profile, our team responds within one business day.</p>
+          <div class="footer-cta-row">
+            <a class="footer-pill" href="contact.html">Start a conversation</a>
+            <a class="footer-pill footer-pill--ghost" href="careers.html">Find jobs</a>
+          </div>
         </div>
       </div>
-      <div class="footer-contact">
+      <div class="footer-col">
+        <div class="footer-title">Company</div>
+        <div class="footer-links">
+          ${companyLinks.map(([url, label]) => `<a href="${url}">${label}</a>`).join("")}
+          <a href="login.html">Log in</a>
+          <a href="signup.html">Join network</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Services</div>
+        <div class="footer-links">
+          <a href="services.html">All services</a>
+          ${serviceLinks.map(([url, label]) => `<a href="${url}">${label}</a>`).join("")}
+        </div>
+      </div>
+      <div class="footer-col footer-contact">
         <div class="footer-title">Contact</div>
-        <p><a href="tel:+914443594841">+91 44 4359 4841</a></p>
-        <p><a href="mailto:contact@collarjobskart.com">contact@collarjobskart.com</a></p>
-        <p>Chennai, Kochi and Hyderabad.</p>
-        <p>Chennai: 3rd Floor, Door No. F33, Dev's Ark, 2nd Ave, Block F, Annanagar East, Chennai 600102.</p>
+        <p class="footer-line"><span>Phone</span><a href="tel:+914443594841">+91 44 4359 4841</a></p>
+        <p class="footer-line"><span>Email</span><a href="mailto:contact@collarjobskart.com">contact@collarjobskart.com</a></p>
+        <p class="footer-line"><span>Offices</span>Chennai, Kochi and Hyderabad.</p>
+        <p class="footer-line"><span>Head office</span>3rd Floor, Door No. F33, Dev's Ark, 2nd Ave, Block F, Annanagar East, Chennai 600102.</p>
       </div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2026 Collar JobsKart. All rights reserved.</span><span>Connecting talent. Fueling growth.</span></div>
+    <div class="footer-bottom"><span>&copy; 2026 Collar JobsKart. All rights reserved.</span><span>Privacy-friendly frontend preview.</span></div>
   </div>`;
 }
 

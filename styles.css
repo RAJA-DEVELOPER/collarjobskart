@@ -6492,5 +6492,275 @@ body[data-page="login"] .auth-visual {
   font-size: 0.76rem;
 }
 
+/* --------------------------------------------------------------------------
+   27. Official Collar JobsKart logo (collarjobskart.com)
+   Transparent logo — no white box. Dark version for light backgrounds,
+   white version for dark hero / dark footer (swapped automatically).
+   -------------------------------------------------------------------------- */
+.brand--image {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  line-height: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 42px;
+  max-width: 190px;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Header: dark logo by default, white logo over dark hero */
+.brand-logo--light {
+  display: none;
+}
+
+.site-header.over-hero:not(.scrolled) .brand-logo--dark {
+  display: none;
+}
+
+.site-header.over-hero:not(.scrolled) .brand-logo--light {
+  display: block;
+}
+
+/* Mobile menu opens a light overlay — force dark logo there */
+body.nav-open .brand-logo--dark {
+  display: block;
+}
+
+body.nav-open .brand-logo--light {
+  display: none;
+}
+
+.brand--footer {
+  align-self: flex-start;
+  margin-bottom: 8px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-intro__logo {
+  width: 230px;
+  max-width: 62vw;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 780px) {
+  .brand-logo {
+    height: 34px;
+    max-width: 152px;
+  }
+
+  .page-intro__logo {
+    width: 190px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   28. Footer spacing fix — airy columns, clear rows, clean mobile stack
+   -------------------------------------------------------------------------- */
+.site-footer {
+  padding: 76px 0 26px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.7fr 0.85fr 1.15fr;
+  align-items: start;
+  gap: clamp(32px, 4vw, 56px);
+  padding-bottom: 48px;
+}
+
+.footer-col {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-brand p {
+  max-width: 360px;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.brand--footer {
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+
+.footer-tag {
+  color: #ffbec8;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footer-extra {
+  display: grid;
+  gap: 14px;
+  margin-top: 4px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-extra p {
+  max-width: 340px;
+  margin: 0;
+  color: #bac4d1;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.footer-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: #2e050d;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition: transform 300ms var(--motion), background 300ms var(--motion);
+}
+
+.footer-pill:hover {
+  transform: translateY(-2px);
+  color: #2e050d;
+}
+
+.footer-pill--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #fff;
+}
+
+.footer-pill--ghost:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.footer-title {
+  margin: 8px 0 2px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links {
+  gap: 4px;
+}
+
+.footer-links a {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 6px 0;
+  line-height: 1.5;
+}
+
+.footer-contact {
+  gap: 0;
+}
+
+.footer-line {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  line-height: 1.65;
+}
+
+.footer-line:first-of-type {
+  padding-top: 2px;
+}
+
+.footer-line:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.footer-line span {
+  color: #ffbec8;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footer-line a {
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+
+.footer-bottom {
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 24px;
+  margin-top: 0;
+  padding-top: 22px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1080px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 44px 40px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 560px;
+  }
+
+  .footer-contact {
+    grid-column: 1 / -1;
+  }
+
+  .footer-contact .footer-line {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 780px) {
+  .site-footer {
+    padding: 58px 0 22px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding-bottom: 36px;
+  }
+
+  .footer-col {
+    gap: 14px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
 
 
