@@ -75,14 +75,14 @@
           <p class="lede">Share the essentials of your experience and the kind of opportunity you are ready to explore next.</p>
         </div>
         <div class="reveal">
-          <form data-local-form data-message="Your profile details are validated in this frontend preview." class="form-grid">
-            <div class="form-field"><label for="candidate-name">Your name</label><input class="form-control" id="candidate-name" required autocomplete="name"></div>
-            <div class="form-field"><label for="candidate-email">Email</label><input class="form-control" id="candidate-email" type="email" required autocomplete="email"></div>
-            <div class="form-field"><label for="candidate-phone">Phone</label><input class="form-control" id="candidate-phone" type="tel" required pattern="[0-9+() .-]{7,}"></div>
-            <div class="form-field"><label for="candidate-city">Preferred city</label><select class="form-control" id="candidate-city" required><option value="">Choose city</option><option>Chennai</option><option>Hyderabad</option><option>Bangalore</option><option>Trichy</option><option>Other</option></select></div>
-            <div class="form-field full"><label for="candidate-interest">Area of interest</label><input class="form-control" id="candidate-interest" placeholder="Role, location or skill area" required></div>
-            <div class="form-field full"><label for="candidate-message">A little about you</label><textarea class="form-control" id="candidate-message" placeholder="Your experience and what you are looking for"></textarea></div>
-            <div class="form-field full"><button class="btn" type="submit">Validate my details <span class="arrow">&nearr;</span></button><p class="form-note">Frontend preview only: details are not sent or stored.</p><div class="form-status" aria-live="polite"></div></div>
+          <form data-local-form data-message="Your profile details are validated in this frontend preview." class="form-grid form-card">
+            <div class="form-field"><label for="candidate-name">Your name *</label><input class="form-control" id="candidate-name" name="candidate-name" required autocomplete="name" placeholder="Full name"></div>
+            <div class="form-field"><label for="candidate-email">Email *</label><input class="form-control" id="candidate-email" name="candidate-email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+            <div class="form-field"><label for="candidate-phone">Phone *</label><input class="form-control" id="candidate-phone" name="candidate-phone" type="tel" required autocomplete="tel" pattern="[0-9+() .-]{7,}" title="Enter a valid phone number" placeholder="+91"></div>
+            <div class="form-field"><label for="candidate-city">Preferred city *</label><select class="form-control" id="candidate-city" name="candidate-city" required><option value="">Choose city</option><option>Chennai</option><option>Hyderabad</option><option>Bangalore</option><option>Trichy</option><option>Other</option></select></div>
+            <div class="form-field full"><label for="candidate-interest">Area of interest *</label><input class="form-control" id="candidate-interest" name="candidate-interest" placeholder="Role, location or skill area" required></div>
+            <div class="form-field full"><label for="candidate-message">A little about you</label><textarea class="form-control" id="candidate-message" name="candidate-message" placeholder="Your experience and what you are looking for"></textarea></div>
+            <div class="form-field full"><button class="btn btn-dark" type="submit">Validate my details <span class="arrow">&nearr;</span></button><p class="form-note">Frontend preview only: details are not sent or stored.</p><div class="form-status" aria-live="polite"></div></div>
           </form>
         </div>
       </div>
