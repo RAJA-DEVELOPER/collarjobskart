@@ -189,7 +189,7 @@ if (header) {
     <div class="nav-actions">
       <a href="login.html" class="nav-login">Log in</a>
       <a href="signup.html" class="btn btn-dark">Join network <span class="arrow">&nearr;</span></a>
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
     </div>
   </nav>`;
 }
@@ -234,21 +234,28 @@ const links = document.querySelector(".nav-links");
 
 links?.insertAdjacentHTML("beforeend", '<a class="mobile-only-auth" href="login.html">Log in</a><a class="mobile-only-auth" href="signup.html">Sign up</a>');
 
+function setMenu(open) {
+  toggle?.setAttribute("aria-expanded", String(open));
+  toggle?.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  links?.classList.toggle("open", open);
+  document.body.classList.toggle("nav-open", open);
+}
+
 toggle?.addEventListener("click", () => {
-  const open = toggle.getAttribute("aria-expanded") === "true";
-  toggle.setAttribute("aria-expanded", String(!open));
-  toggle.setAttribute("aria-label", open ? "Open navigation" : "Close navigation");
-  links?.classList.toggle("open", !open);
-  document.body.classList.toggle("nav-open", !open);
+  const willOpen = toggle.getAttribute("aria-expanded") !== "true";
+  setMenu(willOpen);
 });
 
-links?.querySelectorAll("a").forEach((anchor, index) => {
-  anchor.style.transitionDelay = `${index * 35}ms`;
-  anchor.addEventListener("click", () => {
-    toggle?.setAttribute("aria-expanded", "false");
-    links.classList.remove("open");
-    document.body.classList.remove("nav-open");
-  });
+links?.querySelectorAll("a").forEach((anchor) => {
+  anchor.addEventListener("click", () => setMenu(false));
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setMenu(false);
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 780) setMenu(false);
 });
 
 if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
@@ -518,8 +525,22 @@ document.querySelectorAll("form[data-local-form]").forEach((form) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
     announce(form.dataset.message || "Your details are valid. This frontend preview is not connected to a submission service.");
-    form.querySelector(".form-status")?.replaceChildren(document.createTextNode("Validated locally. This static preview does not send or store submissions."));
+    form.querySelector(".form-status")?.replaceChildren(document.createTextNode(form.dataset.redirect ? "Validated. Redirecting to the home page…" : "Validated locally. This static preview does not send or store submissions."));
     if (form.dataset.reset === "true") form.reset();
+    if (form.dataset.redirect) {
+      window.setTimeout(() => {
+        location.href = form.dataset.redirect;
+      }, 950);
+    }
+  });
+});
+
+document.querySelectorAll("[data-social]").forEach((button) => {
+  button.addEventListener("click", () => {
+    announce(`Continuing with ${button.dataset.social}… (frontend preview)`);
+    window.setTimeout(() => {
+      location.href = "index.html";
+    }, 850);
   });
 });
 
@@ -529,6 +550,7 @@ document.querySelectorAll("[data-password-toggle]").forEach((button) => {
     if (!field) return;
     const showing = field.type === "text";
     field.type = showing ? "password" : "text";
-    button.textContent = showing ? "Show" : "Hide";
+    button.classList.toggle("is-showing", !showing);
+    button.setAttribute("aria-label", !showing ? "Hide password" : "Show password");
   });
 });

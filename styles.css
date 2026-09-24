@@ -466,6 +466,22 @@ p {
   background-image: url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2200&q=86");
 }
 
+.hero--about .hero-media {
+  background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2200&q=86");
+}
+
+.hero--faq .hero-media {
+  background-image: url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=2200&q=86");
+}
+
+.hero--testimonials .hero-media {
+  background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2200&q=86");
+}
+
+.hero--service-detail .hero-media {
+  background-image: url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2200&q=86");
+}
+
 .hero-shade {
   background:
     linear-gradient(90deg, rgba(7, 27, 49, 0.92) 0%, rgba(16, 47, 85, 0.75) 48%, rgba(7, 27, 49, 0.18) 100%),
@@ -4288,3 +4304,2193 @@ body[data-page="about"] .office-index {
     transform: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Responsive system — 1024px / 768px / 480px / 360px / 320px
+   Covers every page section: header, hero, split, grids, forms, auth,
+   jobs, faq, testimonials, offices, timeline, CTA and footer.
+   -------------------------------------------------------------------------- */
+
+html,
+body {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+}
+
+main,
+.wrap,
+.nav,
+.hero-content,
+.section-head,
+.split,
+.service-grid,
+.benefit-grid,
+.metric-row,
+.process-grid,
+.timeline,
+.office-grid,
+.detail-grid,
+.form-grid,
+.form-layout,
+.faq-layout,
+.auth-shell,
+.job-card,
+.quote-card,
+.cta-panel,
+.footer-grid {
+  min-width: 0;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+blockquote,
+.mini-card p,
+.office p,
+.job-card p,
+.quote-card blockquote,
+.footer-contact p {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* ---------- 1024px: small laptop / landscape tablet ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --wrap: min(100% - 48px, 960px);
+    --space-section: clamp(84px, 9vw, 120px);
+  }
+
+  h1 {
+    font-size: clamp(3.4rem, 6vw, 4.6rem);
+    line-height: 0.98;
+  }
+
+  h2 {
+    font-size: clamp(2.6rem, 4.6vw, 3.6rem);
+    line-height: 1;
+  }
+
+  .nav {
+    width: min(100% - 48px, 960px);
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.62rem;
+  }
+
+  .nav-actions .btn {
+    min-height: 46px;
+  }
+
+  .hero {
+    min-height: 760px;
+    height: min(820px, 100dvh);
+  }
+
+  .hero-content {
+    max-width: 660px;
+  }
+
+  .hero h1 {
+    max-width: 640px;
+  }
+
+  .hero-lens {
+    right: max(24px, calc((100vw - 960px) / 2));
+    width: min(290px, 30vw);
+  }
+
+  .section-head {
+    grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.6fr);
+    gap: clamp(28px, 4vw, 56px);
+  }
+
+  .split {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(32px, 5vw, 72px);
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .service-card:nth-child(1) { grid-column: span 7; }
+  .service-card:nth-child(2) { grid-column: span 5; }
+  .service-card:nth-child(3),
+  .service-card:nth-child(4),
+  .service-card:nth-child(5) { grid-column: span 4; }
+  .service-card:nth-child(6),
+  .service-card:nth-child(7) { grid-column: span 6; }
+
+  .benefit:nth-child(1),
+  .benefit:nth-child(4),
+  .benefit:nth-child(2),
+  .benefit:nth-child(3) {
+    grid-column: span 6;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .office-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.1fr 0.7fr 1fr;
+    gap: clamp(28px, 4vw, 56px);
+  }
+
+  .visual-frame img {
+    height: 460px;
+  }
+
+  .image-caption {
+    right: 18px;
+    bottom: 22px;
+  }
+
+  body[data-page="about"] .about-image-seal {
+    right: 12px;
+  }
+}
+
+/* ---------- 768px: portrait tablet ---------- */
+@media (max-width: 768px) {
+  :root {
+    --wrap: calc(100% - 40px);
+    --space-section: 80px;
+  }
+
+  html {
+    scroll-padding-top: 84px;
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 8.5vw, 3.6rem);
+    line-height: 0.98;
+  }
+
+  h2 {
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: 1.18rem;
+  }
+
+  .wrap,
+  .nav {
+    width: calc(100% - 40px);
+  }
+
+  .site-header,
+  .site-header.scrolled {
+    inset: 12px 0 auto;
+  }
+
+  .nav {
+    min-height: 60px;
+    padding: 6px 6px 6px 13px;
+  }
+
+  .nav-actions .nav-login,
+  .nav-actions > .btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: grid !important;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: 108px max(20px, calc((100% - 560px) / 2)) 32px;
+    overflow-y: auto;
+    background: rgba(255, 248, 249, 0.97);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 420ms var(--motion), transform 420ms var(--motion);
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--navy) !important;
+    font-size: 1.05rem;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a.mobile-only-auth {
+    display: block;
+  }
+
+  .hero {
+    min-height: 700px;
+    height: min(780px, 100dvh);
+  }
+
+  .hero-content,
+  .hero--inner .hero-content {
+    max-width: 100%;
+    padding-top: 96px;
+  }
+
+  .hero h1,
+  .hero--inner h1 {
+    max-width: 100%;
+    font-size: clamp(2.7rem, 8.4vw, 3.6rem);
+    line-height: 0.98;
+  }
+
+  .hero p {
+    max-width: 100%;
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .hero-lens,
+  .hero-index,
+  body[data-page="about"] .about-hero__orbit--inner {
+    display: none;
+  }
+
+  .hero-foot {
+    inset: auto 0 22px;
+    display: grid;
+    gap: 8px;
+    font-size: 0.58rem;
+  }
+
+  .hero--inner {
+    min-height: 500px;
+    height: 520px;
+  }
+
+  .section-head,
+  .split,
+  .form-layout,
+  .faq-layout,
+  .auth-shell {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .section-head {
+    margin-bottom: 40px;
+  }
+
+  .section-head .lede {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .visual-frame {
+    min-height: 420px;
+    padding: 8px;
+  }
+
+  .visual-frame img {
+    width: 100%;
+    height: 400px;
+  }
+
+  .image-caption {
+    right: 20px;
+    bottom: 22px;
+    max-width: 250px;
+    padding: 18px 20px;
+  }
+
+  .metric-row,
+  .service-grid,
+  .benefit-grid,
+  .timeline,
+  .office-grid,
+  .detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .service-card:nth-child(n),
+  .benefit:nth-child(n) {
+    grid-column: span 1;
+    min-height: 280px;
+    padding: 28px;
+  }
+
+  .service-card:nth-child(1) h3 {
+    font-size: 2rem;
+  }
+
+  .service-card h3 {
+    margin-top: 52px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .process-grid::before {
+    left: 30px;
+    right: auto;
+    top: 24px;
+    width: 1px;
+    height: calc(100% - 60px);
+  }
+
+  .process-step {
+    min-height: 0;
+    padding: 0 8px 28px 86px;
+  }
+
+  .process-step span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  .process-step h3 {
+    margin-top: 6px;
+  }
+
+  .jobs-filter input {
+    flex: 1 1 100%;
+  }
+
+  .jobs-filter select {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 0;
+  }
+
+  .job-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px;
+  }
+
+  .job-card .btn {
+    justify-self: start;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 26px;
+  }
+
+  .quote-card {
+    min-height: 0;
+    padding: 30px;
+  }
+
+  .quote-card blockquote {
+    font-size: 1.18rem;
+  }
+
+  .faq-answer p {
+    padding-right: 12px;
+  }
+
+  .cta-panel {
+    display: grid;
+    gap: 22px;
+    min-height: 0;
+    padding: 40px 30px;
+  }
+
+  .cta-panel h2 {
+    font-size: clamp(2.1rem, 6.4vw, 3rem);
+  }
+
+  .cta-panel .btn {
+    justify-self: start;
+  }
+
+  .auth-section {
+    padding: 118px 0 72px;
+  }
+
+  .auth-shell {
+    min-height: 0;
+  }
+
+  .auth-visual,
+  .auth-panel {
+    padding: 32px 28px;
+  }
+
+  .auth-visual {
+    min-height: 320px;
+  }
+
+  .auth-visual h1 {
+    font-size: clamp(2.4rem, 7vw, 3rem);
+  }
+
+  .auth-panel h2 {
+    font-size: clamp(2rem, 6vw, 2.6rem);
+  }
+
+  .auth-panel .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .office {
+    min-height: 0;
+    padding: 26px;
+  }
+
+  .office h3 {
+    font-size: 1.7rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  body[data-page="about"] .about-hero {
+    min-height: 600px;
+    height: min(660px, 100dvh);
+  }
+
+  body[data-page="about"] .about-hero__orbit--outer {
+    width: 110vw;
+    right: -55vw;
+    bottom: -42%;
+  }
+
+  body[data-page="about"] .about-hero__edition {
+    max-width: 100%;
+  }
+
+  body[data-page="about"] .about-intro .visual-frame::before {
+    inset: 18px -8px -12px 18px;
+  }
+
+  body[data-page="about"] .about-image-seal {
+    right: 14px;
+    top: 24px;
+  }
+
+  body[data-page="about"] .about-hero__scroll {
+    bottom: 22px;
+  }
+}
+
+/* ---------- 480px: large phone ---------- */
+@media (max-width: 480px) {
+  :root {
+    --wrap: calc(100% - 32px);
+    --space-section: 68px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: clamp(2.3rem, 11vw, 2.9rem);
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 9vw, 2.45rem);
+  }
+
+  .wrap,
+  .nav,
+  .hero-content {
+    width: calc(100% - 32px);
+  }
+
+  .site-header,
+  .site-header.scrolled {
+    inset: 10px 0 auto;
+  }
+
+  .nav {
+    min-height: 58px;
+    padding-left: 12px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .brand-name {
+    font-size: 0.7rem;
+    line-height: 1.15;
+  }
+
+  .brand-name small {
+    margin-top: 2px;
+    font-size: 0.4rem;
+    letter-spacing: 0.14em;
+  }
+
+  .nav-links {
+    padding: 100px 20px 28px;
+  }
+
+  .nav-links a {
+    padding: 13px 0;
+    font-size: 1rem;
+  }
+
+  .btn {
+    min-height: 52px;
+    font-size: 0.62rem;
+  }
+
+  .hero {
+    min-height: 680px;
+    height: auto;
+    padding: 118px 0 86px;
+  }
+
+  .hero-content,
+  .hero--inner .hero-content {
+    padding-top: 18px;
+  }
+
+  .hero h1,
+  .hero--inner h1 {
+    margin: 16px 0 18px;
+    font-size: clamp(2.3rem, 11vw, 2.9rem);
+    line-height: 1;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    margin-top: 26px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+  }
+
+  .hero-foot {
+    position: relative;
+    inset: auto;
+    margin-top: 34px;
+    padding: 0;
+    font-size: 0.54rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-foot span:last-child {
+    display: none;
+  }
+
+  .hero--inner {
+    min-height: 0;
+    height: auto;
+    padding: 120px 0 64px;
+  }
+
+  .section {
+    padding: var(--space-section) 0;
+  }
+
+  .section-head {
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+
+  .section-head .lede {
+    padding-left: 15px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .eyebrow {
+    max-width: 100%;
+    font-size: 0.56rem;
+    letter-spacing: 0.13em;
+  }
+
+  .split {
+    gap: 30px;
+  }
+
+  .visual-frame {
+    min-height: 340px;
+    padding: 7px;
+    border-radius: 22px;
+  }
+
+  .visual-frame img {
+    height: 320px;
+    border-radius: 16px;
+  }
+
+  .image-caption {
+    right: 14px;
+    left: 14px;
+    bottom: 14px;
+    max-width: none;
+    padding: 15px 17px;
+  }
+
+  .image-caption strong {
+    font-size: 1.4rem;
+  }
+
+  .image-caption span {
+    font-size: 0.72rem;
+  }
+
+  .metric-row,
+  .service-grid,
+  .benefit-grid,
+  .timeline,
+  .office-grid,
+  .detail-grid,
+  .form-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .metric strong {
+    font-size: 2.1rem;
+  }
+
+  .service-card:nth-child(n),
+  .benefit:nth-child(n) {
+    grid-column: auto;
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .service-card:nth-child(1) h3 {
+    font-size: 1.9rem;
+  }
+
+  .service-card h3 {
+    margin: 46px 0 12px;
+  }
+
+  .service-card .card-arrow {
+    right: 20px;
+    top: 20px;
+  }
+
+  .benefit {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .benefit strong {
+    font-size: 1.5rem;
+  }
+
+  .process-step {
+    padding-left: 76px;
+  }
+
+  .process-step span {
+    width: 54px;
+    height: 54px;
+  }
+
+  .process-grid::before {
+    left: 27px;
+  }
+
+  .mini-card,
+  .detail-panel,
+  .office,
+  .job-card,
+  .quote-card {
+    border-radius: 16px;
+  }
+
+  .mini-card,
+  .detail-panel,
+  .office {
+    padding: 22px;
+  }
+
+  .detail-grid {
+    gap: 12px;
+  }
+
+  .jobs-filter select {
+    flex: 1 1 100%;
+  }
+
+  .jobs-filter input,
+  .jobs-filter select,
+  .form-control {
+    min-height: 52px;
+    font-size: 16px;
+  }
+
+  .job-card {
+    padding: 22px;
+  }
+
+  .job-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  .tag-list {
+    gap: 6px;
+  }
+
+  .quote-card {
+    padding: 24px;
+  }
+
+  .quote-mark {
+    font-size: 3.2rem;
+  }
+
+  .quote-card blockquote {
+    margin: 16px 0 22px;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  .slider-controls {
+    flex-wrap: wrap;
+  }
+
+  .faq-question {
+    gap: 14px;
+    padding: 18px 2px;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .faq-answer p {
+    padding: 0 4px 0 2px;
+    font-size: 0.86rem;
+  }
+
+  .form-grid {
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .form-field.full {
+    grid-column: auto;
+  }
+
+  .cta-panel {
+    padding: 32px 22px;
+    border-radius: 22px;
+  }
+
+  .cta-panel::before {
+    inset: 7px;
+    border-radius: 16px;
+  }
+
+  .cta-panel h2 {
+    font-size: clamp(1.8rem, 8.4vw, 2.3rem);
+    line-height: 1.05;
+  }
+
+  .cta-panel .btn {
+    width: 100%;
+    justify-content: space-between;
+    justify-self: stretch;
+  }
+
+  .auth-section {
+    padding: 108px 0 60px;
+  }
+
+  .auth-visual,
+  .auth-panel {
+    padding: 26px 20px;
+  }
+
+  .auth-visual {
+    min-height: 280px;
+  }
+
+  .auth-visual h1 {
+    font-size: clamp(2.1rem, 10vw, 2.6rem);
+  }
+
+  .auth-panel h2 {
+    font-size: clamp(1.8rem, 8.6vw, 2.3rem);
+  }
+
+  .office h3 {
+    font-size: 1.6rem;
+  }
+
+  .milestone {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .footer-grid {
+    gap: 26px;
+  }
+
+  .site-footer {
+    margin-top: 56px;
+    padding: 60px 0 22px;
+  }
+
+  .back-top {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .toast {
+    bottom: 16px;
+    font-size: 0.82rem;
+  }
+
+  body[data-page="about"] .about-hero {
+    min-height: 0;
+    height: auto;
+    padding: 122px 0 58px;
+  }
+
+  body[data-page="about"] .about-hero__edition {
+    grid-template-columns: auto auto;
+    width: 100%;
+    margin-top: 26px;
+    padding: 12px 14px;
+  }
+
+  body[data-page="about"] .about-hero__edition i {
+    display: none;
+  }
+
+  body[data-page="about"] .about-hero__edition strong {
+    justify-self: end;
+    font-size: 1.3rem;
+  }
+
+  body[data-page="about"] .about-hero__edition em {
+    grid-column: 1 / -1;
+  }
+
+  body[data-page="about"] .about-hero__scroll {
+    display: none;
+  }
+
+  body[data-page="about"] .about-hero__orbit--outer {
+    width: 130vw;
+    right: -65vw;
+    bottom: -30%;
+  }
+
+  body[data-page="about"] .about-intro::before {
+    display: none;
+  }
+
+  body[data-page="about"] .about-intro .visual-frame::before {
+    inset: 14px -4px -10px 12px;
+  }
+
+  body[data-page="about"] .about-image-seal {
+    top: 18px;
+    right: 18px;
+    width: 84px;
+    font-size: 0.85rem;
+  }
+
+  body[data-page="about"] .about-principle {
+    margin-top: 24px;
+    padding-left: 16px;
+  }
+}
+
+/* ---------- 360px: standard small phone ---------- */
+@media (max-width: 360px) {
+  :root {
+    --wrap: calc(100% - 28px);
+    --space-section: 60px;
+  }
+
+  .wrap,
+  .nav,
+  .hero-content {
+    width: calc(100% - 28px);
+  }
+
+  h1 {
+    font-size: clamp(2.05rem, 11vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 9.4vw, 2.15rem);
+  }
+
+  .nav {
+    min-height: 56px;
+    padding: 5px 5px 5px 11px;
+    border-radius: 18px;
+  }
+
+  .brand {
+    gap: 9px;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.64rem;
+  }
+
+  .brand-name small {
+    font-size: 0.36rem;
+  }
+
+  .menu-toggle {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-links {
+    padding: 96px 18px 24px;
+  }
+
+  .hero h1,
+  .hero--inner h1 {
+    font-size: clamp(2.05rem, 11vw, 2.5rem);
+  }
+
+  .hero p {
+    font-size: 0.87rem;
+  }
+
+  .btn {
+    min-height: 50px;
+    padding-left: 18px;
+    gap: 10px;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .section-head .lede,
+  .lede {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .visual-frame {
+    min-height: 310px;
+  }
+
+  .visual-frame img {
+    height: 290px;
+  }
+
+  .service-card:nth-child(n),
+  .benefit:nth-child(n) {
+    padding: 22px;
+  }
+
+  .service-card h3 {
+    margin-top: 42px;
+    font-size: 1.15rem;
+  }
+
+  .service-card:nth-child(1) h3 {
+    font-size: 1.7rem;
+  }
+
+  .service-card p,
+  .service-card ul,
+  .benefit p {
+    font-size: 0.82rem;
+  }
+
+  .process-step {
+    padding: 0 4px 24px 70px;
+  }
+
+  .process-step span {
+    width: 50px;
+    height: 50px;
+    font-size: 0.58rem;
+  }
+
+  .process-grid::before {
+    left: 25px;
+  }
+
+  .quote-card {
+    padding: 22px;
+  }
+
+  .quote-card blockquote {
+    font-size: 1rem;
+  }
+
+  .form-grid {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .cta-panel {
+    padding: 28px 20px;
+  }
+
+  .cta-panel h2 {
+    font-size: clamp(1.65rem, 8.8vw, 2.05rem);
+  }
+
+  .auth-visual,
+  .auth-panel {
+    padding: 24px 18px;
+  }
+
+  .auth-visual h1 {
+    font-size: clamp(1.95rem, 10.4vw, 2.3rem);
+  }
+
+  .password-wrap .form-control {
+    padding-right: 68px;
+  }
+
+  .toggle-password {
+    right: 10px;
+    font-size: 0.68rem;
+  }
+
+  .office,
+  .mini-card,
+  .detail-panel,
+  .job-card {
+    padding: 20px;
+  }
+
+  .job-card h3 {
+    font-size: 1.02rem;
+  }
+
+  .footer-brand p,
+  .footer-links a,
+  .footer-contact,
+  .footer-contact p {
+    font-size: 0.75rem;
+  }
+
+  body[data-page="about"] .about-image-seal {
+    width: 78px;
+  }
+
+  body[data-page="about"] .about-hero__edition strong {
+    font-size: 1.2rem;
+  }
+}
+
+/* ---------- 320px: extra-small phone ---------- */
+@media (max-width: 320px) {
+  :root {
+    --wrap: calc(100% - 24px);
+    --space-section: 56px;
+  }
+
+  body {
+    font-size: 14.5px;
+  }
+
+  .wrap,
+  .nav,
+  .hero-content {
+    width: calc(100% - 24px);
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    line-height: 1.05;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+  }
+
+  .site-header,
+  .site-header.scrolled {
+    inset: 8px 0 auto;
+  }
+
+  .nav {
+    min-height: 54px;
+    padding: 5px 5px 5px 10px;
+    border-radius: 16px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .brand-name {
+    max-width: 148px;
+    font-size: 0.6rem;
+  }
+
+  .brand-name small {
+    display: none;
+  }
+
+  .menu-toggle {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-links {
+    padding: 92px 16px 22px;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    font-size: 0.95rem;
+  }
+
+  .hero,
+  .hero--inner,
+  body[data-page="about"] .about-hero {
+    padding: 112px 0 54px;
+  }
+
+  .hero {
+    min-height: 0;
+    height: auto;
+  }
+
+  .hero h1,
+  .hero--inner h1 {
+    margin: 14px 0 16px;
+    font-size: 2rem;
+    line-height: 1.02;
+  }
+
+  .hero p {
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  .eyebrow {
+    padding: 6px 10px 6px 8px;
+    font-size: 0.52rem;
+    letter-spacing: 0.11em;
+  }
+
+  .btn {
+    min-height: 48px;
+    padding: 0 8px 0 16px;
+    font-size: 0.58rem;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .section-head {
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .section-head .lede,
+  .lede {
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  .split {
+    gap: 26px;
+  }
+
+  .visual-frame {
+    min-height: 280px;
+    padding: 6px;
+    border-radius: 18px;
+  }
+
+  .visual-frame img {
+    height: 260px;
+    border-radius: 13px;
+  }
+
+  .image-caption {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    padding: 13px 15px;
+    border-radius: 13px;
+  }
+
+  .image-caption strong {
+    font-size: 1.25rem;
+  }
+
+  .metric {
+    padding: 18px;
+  }
+
+  .metric strong {
+    font-size: 1.9rem;
+  }
+
+  .metric span {
+    max-width: none;
+    font-size: 0.72rem;
+  }
+
+  .service-card:nth-child(n),
+  .benefit:nth-child(n) {
+    padding: 20px;
+  }
+
+  .service-card h3 {
+    margin-top: 40px;
+  }
+
+  .service-card:nth-child(1) h3 {
+    font-size: 1.55rem;
+  }
+
+  .service-card .card-arrow {
+    width: 32px;
+    height: 32px;
+    right: 16px;
+    top: 16px;
+  }
+
+  .benefit strong {
+    font-size: 1.35rem;
+  }
+
+  .process-step {
+    padding-left: 64px;
+  }
+
+  .process-step span {
+    width: 46px;
+    height: 46px;
+  }
+
+  .process-grid::before {
+    left: 23px;
+  }
+
+  .mini-card,
+  .detail-panel,
+  .office,
+  .job-card,
+  .quote-card {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .feature-list li {
+    grid-template-columns: 14px 1fr;
+    gap: 9px;
+    font-size: 0.84rem;
+  }
+
+  .quote-card blockquote {
+    font-size: 0.96rem;
+  }
+
+  .slider-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .faq-question {
+    font-size: 0.88rem;
+  }
+
+  .faq-question span:last-child {
+    width: 28px;
+    height: 28px;
+  }
+
+  .form-grid {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .cta-panel {
+    padding: 26px 18px;
+  }
+
+  .cta-panel h2 {
+    font-size: 1.6rem;
+  }
+
+  .auth-section {
+    padding: 100px 0 52px;
+  }
+
+  .auth-shell {
+    border-radius: 0;
+  }
+
+  .auth-visual,
+  .auth-panel {
+    padding: 22px 16px;
+  }
+
+  .auth-visual {
+    min-height: 250px;
+  }
+
+  .auth-visual h1 {
+    font-size: 1.9rem;
+  }
+
+  .auth-panel h2 {
+    font-size: 1.7rem;
+  }
+
+  .office h3 {
+    font-size: 1.45rem;
+  }
+
+  .milestone {
+    padding: 18px;
+  }
+
+  .milestone time {
+    font-size: 1.6rem;
+  }
+
+  .site-footer {
+    margin-top: 48px;
+    padding: 52px 0 20px;
+  }
+
+  .toast {
+    max-width: calc(100% - 24px);
+    font-size: 0.78rem;
+  }
+
+  body[data-page="about"] .about-hero__edition {
+    padding: 11px 12px;
+  }
+
+  body[data-page="about"] .about-hero__edition span,
+  body[data-page="about"] .about-hero__edition em {
+    font-size: 0.48rem;
+  }
+
+  body[data-page="about"] .about-hero__edition strong {
+    font-size: 1.1rem;
+  }
+
+  body[data-page="about"] .about-intro .visual-frame::before {
+    inset: 12px -2px -8px 10px;
+  }
+
+  body[data-page="about"] .about-image-seal {
+    top: 14px;
+    right: 14px;
+    width: 72px;
+  }
+
+  body[data-page="about"] .about-image-seal b {
+    font-size: 0.44rem;
+  }
+
+  body[data-page="about"] .about-principle {
+    padding-left: 14px;
+  }
+
+  body[data-page="about"] .about-principle strong {
+    font-size: 1.15rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Hamburger / mobile nav fix
+   Root causes fixed:
+   1. `.nav` has backdrop-filter, which makes `position:fixed` children
+      position relative to the pill instead of the viewport.
+   2. `.nav-links` used `z-index:-1`, painting it behind the pill and
+      making links unclickable.
+   -------------------------------------------------------------------------- */
+
+/* Desktop safeguard: menu is always visible inline, toggle hidden. */
+@media (min-width: 781px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .nav-links {
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .nav-links a {
+    opacity: 1 !important;
+    transform: none !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+@media (max-width: 780px) {
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* The header gains backdrop-filter when .scrolled (see base rule), which
+     traps position:fixed descendants inside the top bar. Kill it on mobile
+     so the overlay always covers the viewport — scrolled or not. */
+  .site-header,
+  .site-header.scrolled {
+    z-index: 60;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Remove the containing block so the fixed overlay covers the viewport. */
+  .nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    isolation: isolate;
+    overflow: visible;
+  }
+
+  .menu-toggle {
+    touch-action: manipulation;
+  }
+
+  /* Keep the pill bar (brand + toggle) above the overlay. */
+  .nav .brand,
+  .nav .nav-actions {
+    position: relative;
+    z-index: 60;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 61;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(255, 248, 249, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 420ms var(--motion), transform 420ms var(--motion), visibility 0s linear 420ms;
+  }
+
+  .nav-links.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity 420ms var(--motion), transform 420ms var(--motion), visibility 0s;
+  }
+
+  /* Staggered entrance, CSS-only so desktop hover has no delay. */
+  .nav-links.open a:nth-child(1) { transition-delay: 35ms; }
+  .nav-links.open a:nth-child(2) { transition-delay: 70ms; }
+  .nav-links.open a:nth-child(3) { transition-delay: 105ms; }
+  .nav-links.open a:nth-child(4) { transition-delay: 140ms; }
+  .nav-links.open a:nth-child(5) { transition-delay: 175ms; }
+  .nav-links.open a:nth-child(6) { transition-delay: 210ms; }
+  .nav-links.open a:nth-child(7) { transition-delay: 245ms; }
+  .nav-links.open a:nth-child(8) { transition-delay: 280ms; }
+  .nav-links.open a:nth-child(9) { transition-delay: 315ms; }
+
+  /* Active page highlight inside the hamburger menu. */
+  .nav-links a.active,
+  .nav-links a[aria-current="page"] {
+    position: relative;
+    color: var(--blue) !important;
+    font-weight: 800;
+    background: rgba(211, 27, 56, 0.07);
+    border-radius: 12px;
+    border-bottom-color: rgba(211, 27, 56, 0.35);
+    padding-left: 16px;
+  }
+
+  .nav-links a.active::before,
+  .nav-links a[aria-current="page"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 60%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    background: var(--blue);
+  }
+
+  /* When open, force the pill solid + dark text so it reads on the light overlay. */
+  body.nav-open .nav {
+    background: rgba(255, 253, 253, 0.96);
+    border-color: rgba(122, 14, 32, 0.1);
+    box-shadow: 0 16px 42px rgba(84, 8, 24, 0.12), inset 0 1px 0 #fff;
+  }
+
+  body.nav-open .site-header.over-hero:not(.scrolled) .nav {
+    background: rgba(255, 253, 253, 0.96);
+    border-color: rgba(122, 14, 32, 0.1);
+    box-shadow: 0 16px 42px rgba(84, 8, 24, 0.12), inset 0 1px 0 #fff;
+  }
+
+  body.nav-open .site-header.over-hero:not(.scrolled) .brand-name,
+  body.nav-open .site-header.over-hero:not(.scrolled) .nav-links a {
+    color: var(--navy);
+  }
+
+  body.nav-open .site-header.over-hero:not(.scrolled) .brand-name small {
+    color: #8f6e74;
+  }
+
+  body.nav-open .site-header.over-hero:not(.scrolled) .brand-mark,
+  body.nav-open .site-header.over-hero:not(.scrolled) .menu-toggle {
+    color: var(--navy);
+    border-color: var(--line);
+  }
+
+  body.nav-open .site-header.over-hero:not(.scrolled) .brand-mark {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Contrast / readability fixes (WCAG AA: 4.5:1 small text, 3:1 large text)
+   Measured failures fixed:
+   - `.brand-name small` #8f6e74 on near-white was ~4.4:1 -> darkened.
+   - White/translucent text over photographic hero areas could drop to
+     ~2.8:1 on bright spots -> stronger scrim + shadows + opacities.
+   -------------------------------------------------------------------------- */
+
+/* 1. Brand tagline: 4.4:1 -> ~5.8:1 on light pill. */
+.brand-name small {
+  color: #7a5b61;
+}
+
+/* 2. Over-hero tagline sits on photo: raise opacity for safety. */
+.site-header.over-hero:not(.scrolled) .brand-name small {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.nav-open .site-header.over-hero:not(.scrolled) .brand-name small {
+  color: #7a5b61;
+}
+
+/* 3. Form placeholders: explicit, darker than browser default. */
+input::placeholder,
+textarea::placeholder {
+  color: #675054;
+  opacity: 1;
+}
+
+/* 4. Stronger hero scrim so body copy holds up on bright photo areas. */
+.hero-shade {
+  background:
+    linear-gradient(92deg, rgba(57, 6, 15, 0.97) 0%, rgba(105, 9, 28, 0.88) 47%, rgba(91, 8, 23, 0.38) 100%),
+    linear-gradient(0deg, rgba(53, 3, 13, 0.72), transparent 62%);
+}
+
+.hero p {
+  color: rgba(255, 247, 248, 0.9);
+  text-shadow: 0 1px 10px rgba(20, 1, 6, 0.55);
+}
+
+.hero .eyebrow,
+.hero-foot,
+.hero-index,
+.hero-lens,
+.btn-outline {
+  text-shadow: 0 1px 8px rgba(20, 1, 6, 0.5);
+}
+
+/* 5. Hero foot meta: 0.76 white -> solid white + shadow. */
+.hero-foot {
+  color: #fff;
+}
+
+/* 6. Vertical index: 0.62 -> 0.85 so it stays >= 4.5:1. */
+.hero-index {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 7. Hero lens sits on photo: deepen glass + brighten label. */
+.hero-lens {
+  background: rgba(56, 5, 15, 0.55);
+}
+
+.hero-lens__top {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* 8. About edition chip: deeper glass, brighter supporting line. */
+body[data-page="about"] .about-hero__edition {
+  background: rgba(69, 4, 18, 0.55);
+}
+
+body[data-page="about"] .about-hero__edition span {
+  color: #ffd9df;
+}
+
+body[data-page="about"] .about-hero__edition em {
+  color: rgba(255, 239, 242, 0.88);
+}
+
+body[data-page="about"] .about-hero__scroll {
+  color: rgba(255, 239, 242, 0.9);
+  text-shadow: 0 1px 8px rgba(20, 1, 6, 0.55);
+}
+
+/* 9. Decorative benefit index: 0.68 -> 0.85 (large text, 3:1). */
+body[data-page="about"] .benefit-index {
+  color: rgba(255, 228, 233, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   Red-text contrast fixes (measured):
+   - CTA + auth-visual eyebrows: dark navy on dark bg was ~1.3-1.5:1.
+   - Over-hero nav hover red on dark pill was ~3.2:1.
+   - FAQ open icon red on blue-soft was ~4.49:1 (borderline).
+   - Hamburger active red on tinted row was ~4.5:1 (hairline).
+   -------------------------------------------------------------------------- */
+
+/* 10. Dark panels need the light eyebrow treatment (14:1 on CTA). */
+.cta-panel .eyebrow,
+.auth-visual .eyebrow {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff0f2;
+}
+
+.cta-panel .eyebrow::before,
+.auth-visual .eyebrow::before {
+  background: #ff8fa0;
+}
+
+/* 11. Over-hero nav hover/active: light pink on dark pill (11.5:1). */
+.site-header.over-hero:not(.scrolled) .nav-links a:hover,
+.site-header.over-hero:not(.scrolled) .nav-links a.active,
+.site-header.over-hero:not(.scrolled) .nav-links a[aria-current="page"] {
+  color: #ffc6cf;
+}
+
+/* ...but when the hamburger overlay is open the menu sits on light bg. */
+body.nav-open .site-header.over-hero:not(.scrolled) .nav-links a:hover,
+body.nav-open .site-header.over-hero:not(.scrolled) .nav-links a.active,
+body.nav-open .site-header.over-hero:not(.scrolled) .nav-links a[aria-current="page"] {
+  color: var(--blue);
+}
+
+/* 12. FAQ open icon: navy on blue-soft (9.4:1) instead of red (4.49:1). */
+.faq-item.open .faq-question span:last-child {
+  color: var(--navy);
+}
+
+/* 13. Hamburger active link: deeper red for margin (5.9:1 on tinted row). */
+@media (max-width: 780px) {
+  .nav-links a.active,
+  .nav-links a[aria-current="page"] {
+    color: #b3122e !important;
+  }
+
+  .nav-links a.active::before,
+  .nav-links a[aria-current="page"]::before {
+    background: #b3122e;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   14. Premium hamburger icon: filled crimson button, 3 bars -> X morph.
+   Overrides the old 2-line outline style (flex column self-centers, so the
+   42px/40px sizes in small breakpoints stay aligned automatically).
+   -------------------------------------------------------------------------- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #d51c3a, #a5122c);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(157, 8, 35, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: transform 360ms var(--motion), box-shadow 360ms var(--motion);
+}
+
+.menu-toggle span {
+  position: static;
+  left: auto;
+  top: auto;
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 420ms var(--motion), opacity 280ms ease, width 420ms var(--motion);
+}
+
+.menu-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(157, 8, 35, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.menu-toggle:active {
+  transform: scale(0.94);
+}
+
+.menu-toggle[aria-expanded="true"] span:first-child {
+  top: auto;
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.1);
+}
+
+.menu-toggle[aria-expanded="true"] span:last-child {
+  top: auto;
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* White-filled variant over dark hero photos. */
+.site-header.over-hero:not(.scrolled) .menu-toggle {
+  background: #fff;
+  color: var(--blue);
+  border-color: transparent;
+  box-shadow: 0 10px 24px rgba(20, 1, 6, 0.3), inset 0 1px 0 #fff;
+}
+
+body.nav-open .site-header.over-hero:not(.scrolled) .menu-toggle {
+  background: linear-gradient(145deg, #d51c3a, #a5122c);
+  color: #fff;
+  border-color: transparent;
+}
+
+@media (max-width: 780px) {
+  .menu-toggle {
+    display: inline-flex !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. Home hero mobile alignment (home page ONLY).
+   Centers eyebrow, headline, para, buttons and foot meta on <=768px.
+   Lens/index stay as-is, other pages and desktop untouched.
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  body[data-page="index"] .hero-content {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  body[data-page="index"] .hero-content h1 {
+    margin-inline: auto;
+    text-wrap: balance;
+  }
+
+  body[data-page="index"] .hero p {
+    margin-inline: auto;
+  }
+
+  body[data-page="index"] .hero-actions {
+    justify-content: center;
+  }
+
+  body[data-page="index"] .hero-foot {
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. Home hero foot sentence ("Consulting, training, recruitment and
+   payroll") dead-center on ALL views — home page only. Foot joins normal
+   flow (never overlaps buttons) and stacks centered; hero becomes column
+   so content + foot sit together.
+   -------------------------------------------------------------------------- */
+body[data-page="index"] .hero {
+  flex-direction: column;
+  justify-content: center;
+}
+
+body[data-page="index"] .hero-foot {
+  position: static;
+  inset: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+/* --------------------------------------------------------------------------
+   18. Service-card arrow stays visible on hover. Cards turn white on hover
+   but the old hover rule turned the arrow white too (invisible). Crimson
+   arrow on white cards; white arrow only on the dark first card.
+   -------------------------------------------------------------------------- */
+.service-card:hover .card-arrow {
+  color: var(--blue);
+  border-color: rgba(211, 27, 56, 0.4);
+  background: var(--blue-soft);
+}
+
+.service-card:nth-child(1):hover .card-arrow {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   19. About hero "Discover the story" centered under the content.
+   Was left-docked; now dead-center of the hero on all views
+   (stays hidden on small phones as before).
+   -------------------------------------------------------------------------- */
+body[data-page="about"] .about-hero__scroll {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* --------------------------------------------------------------------------
+   20. Login/Signup: header + footer removed for focused auth screens.
+   Top padding reduced since the fixed header is gone.
+   -------------------------------------------------------------------------- */
+body[data-page="login"] .site-header,
+body[data-page="signup"] .site-header,
+body[data-page="login"] .site-footer,
+body[data-page="signup"] .site-footer {
+  display: none;
+}
+
+body[data-page="login"] .auth-section,
+body[data-page="signup"] .auth-section {
+  padding: 56px 0 72px;
+}
+
+@media (max-width: 768px) {
+  body[data-page="login"] .auth-section,
+  body[data-page="signup"] .auth-section {
+    padding: 36px 0 56px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   21. Login left panel content pushed to the top (was bottom-anchored).
+   Login page only — signup untouched.
+   -------------------------------------------------------------------------- */
+body[data-page="login"] .auth-visual {
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   22. Password eye-icon toggle (replaces Show/Hide text).
+   -------------------------------------------------------------------------- */
+.password-wrap .form-control {
+  padding-right: 56px;
+}
+
+.toggle-password {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  right: 8px;
+  border-radius: 10px;
+  color: #6b575c;
+}
+
+.toggle-password:hover {
+  color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.toggle-password .eye-icon {
+  width: 20px;
+  height: 20px;
+  grid-area: 1 / 1;
+}
+
+.toggle-password .eye-closed {
+  display: none;
+}
+
+.toggle-password.is-showing .eye-closed {
+  display: block;
+}
+
+.toggle-password.is-showing .eye-open {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   23. Social continue buttons (login/signup).
+   -------------------------------------------------------------------------- */
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 14px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.social-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 360ms var(--motion), box-shadow 360ms var(--motion), border-color 360ms var(--motion);
+}
+
+.btn-social svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.btn-social:hover {
+  transform: translateY(-2px);
+  border-color: rgba(211, 27, 56, 0.4);
+  box-shadow: 0 12px 26px rgba(77, 7, 21, 0.1);
+}
+
+.btn-social:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (max-width: 360px) {
+  .social-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   24. No blur on header edges: kill the full-width header blur band and the
+   pill backdrop blur (they smeared page content at the screen edges).
+   Over-hero pill deepened to stay readable without blur.
+   -------------------------------------------------------------------------- */
+.site-header,
+.site-header.scrolled,
+.nav,
+.site-header.scrolled .nav,
+.site-header.over-hero:not(.scrolled) .nav {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site-header.over-hero:not(.scrolled) .nav {
+  background: rgba(62, 5, 16, 0.78);
+}
+
+/* --------------------------------------------------------------------------
+   25. Header text bigger (desktop only — mobile sizes untouched).
+   Nav links were ~10px, now readable.
+   -------------------------------------------------------------------------- */
+@media (min-width: 781px) {
+  .brand-name {
+    font-size: 0.85rem;
+  }
+
+  .brand-name small {
+    font-size: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .nav-login {
+    font-size: 0.8rem;
+  }
+
+  .nav-actions .btn {
+    font-size: 0.72rem;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 1080px) {
+  .nav-links a {
+    font-size: 0.72rem;
+  }
+
+  .nav-actions .btn {
+    font-size: 0.68rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   26. Footer text bigger.
+   -------------------------------------------------------------------------- */
+.footer-brand p {
+  font-size: 0.92rem;
+}
+
+.footer-title {
+  font-size: 0.78rem;
+}
+
+.footer-links a,
+.footer-contact {
+  font-size: 0.88rem;
+}
+
+.footer-contact p {
+  font-size: 0.88rem;
+}
+
+.footer-bottom {
+  font-size: 0.76rem;
+}
+
+
+
