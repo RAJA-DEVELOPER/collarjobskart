@@ -6530,12 +6530,16 @@ body[data-page="login"] .auth-visual {
   display: block;
 }
 
-/* Mobile menu opens a light overlay — force dark logo there */
-body.nav-open .brand-logo--dark {
+/* Mobile menu opens a light overlay — force dark logo there.
+   Needs to beat `.site-header.over-hero:not(.scrolled) .brand-logo--*`
+   (0,4,0), otherwise the white logo stays on the light overlay and looks invisible. */
+body.nav-open .brand-logo--dark,
+body.nav-open .site-header.over-hero:not(.scrolled) .brand-logo--dark {
   display: block;
 }
 
-body.nav-open .brand-logo--light {
+body.nav-open .brand-logo--light,
+body.nav-open .site-header.over-hero:not(.scrolled) .brand-logo--light {
   display: none;
 }
 
